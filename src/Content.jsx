@@ -1,30 +1,22 @@
+import { FaTrashAlt } from 'react-icons/fa';
 import { useState } from 'react';
 import './Content.css';
+import data from './data';
 
 export default function Content() {
-	const [name, setName] = useState('Emilia');
-	const [count, setCount] = useState(0);
-
-	const handleNameChange = () => {
-		const names = ['Radek', 'Emilia', 'Dawid', 'Miłosz'];
-		setName(names[Math.floor(Math.random() * names.length)]);
-	};
-
-	const handleClick = () => {
-		setCount(count + 1);
-		console.log(count);
-	};
-
-	const handleClickTwo = () => {
-		console.log(count);
-	};
+	const [items, setItems] = useState(data);
 
 	return (
 		<main>
-			<p onDoubleClick={handleClick}>Hello {name}</p>
-			<button onClick={handleNameChange}>Change Name</button>
-			<button onClick={handleClick}>Click it</button>
-			<button onClick={handleClickTwo}>Click it</button>
+			<ul>
+				{items.map((item) => (
+					<li className="item" key={item.id}>
+						<input type="checkbox" checked={item.checked} />
+						<label>{item.value}</label>
+						<FaTrashAlt role="button" tabIndex="0" />
+					</li>
+				))}
+			</ul>
 		</main>
 	);
 }
