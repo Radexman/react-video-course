@@ -1,0 +1,11 @@
+/* Content Component Styles */
+
+main {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+	overflow-y: auto;
+}

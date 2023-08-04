@@ -1,0 +1,10 @@
+/* Footer Component Styles */
+
+footer {
+	width: 100%;
+	padding: 0.25em;
+	background-color: mediumblue;
+	color: aliceblue;
+	display: grid;
+	place-content: center;
+}
