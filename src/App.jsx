@@ -17,7 +17,7 @@ function App() {
 	};
 
 	// Delete item, update item's state and update local storage
-	const handleDlete = (id) => {
+	const handleDelete = (id) => {
 		const listItems = items.filter((item) => item.id !== id);
 
 		setItems(listItems);
@@ -30,11 +30,10 @@ function App() {
 			<Header title='Grocery List' />
 			<Content
 				items={items}
-				setItems={setItems}
-				handleDelete={handleDlete}
 				handleCheck={handleCheck}
+				handleDelete={handleDelete}
 			/>
-			<Footer />
+			<Footer length={items.length} />
 		</div>
 	);
 }
