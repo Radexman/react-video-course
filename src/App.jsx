@@ -1,6 +1,7 @@
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
+import AddItem from './AddItem';
 import './App.css';
 import { useState } from 'react';
 import data from './data';
@@ -28,6 +29,7 @@ function App() {
 	return (
 		<div className='App'>
 			<Header title='Grocery List' />
+			<AddItem />
 			<Content
 				items={items}
 				handleCheck={handleCheck}
