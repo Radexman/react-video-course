@@ -8,6 +8,7 @@ import data from './data';
 
 function App() {
 	const [items, setItems] = useState(data);
+	const [newItem, setNewItem] = useState('');
 
 	// Check checkbox, set item's state and set to local storage
 	const handleCheck = (id) => {
@@ -26,10 +27,19 @@ function App() {
 		localStorage.setItem('shoppinglist', JSON.stringify(listItems));
 	};
 
+	const handleSubmit = (e) => {
+		console.log('Submitted');
+	};
+
 	return (
 		<div className='App'>
 			<Header title='Grocery List' />
-			<AddItem />
+			<AddItem
+				newItem={newItem}
+				setNewItem={setNewItem}
+				handleSubmit={handleSubmit}
+			/>
+
 			<Content
 				items={items}
 				handleCheck={handleCheck}
